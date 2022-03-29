@@ -60,7 +60,7 @@ z-index: 1;
   color: black;
   padding: 0 40px 0 40px;
   top: 10;
-  left: 60em;
+  margin-left: 90rem;
   position: fixed;
 width: 100%;
 z-index: 1;

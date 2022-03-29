@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('image');
             $table->string('facilate');
-            $table->string('synopsis');
+            $table->string('synopsis',5000);
             $table->timestamps();
         });
     }

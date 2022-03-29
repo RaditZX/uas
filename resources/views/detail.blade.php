@@ -85,7 +85,7 @@
 
    <div class="container">
    
-      <a href="/detail/{{ ($hotel->id) }}"><img style="  width: 80em;height: 20em;" src="{{asset('storage/'.$hotel->image)}}" alt=""></a>
+      <a href="/detail/{{ ($hotel->id) }}"><img style="  width: 115rem;height: 30em;" src="{{asset('storage/'.$hotel->image)}}" alt=""></a>
   
      <div class="container1">
      
@@ -94,27 +94,41 @@
      </div>
 </div>
 
-
-     <h1 style="margin-left:1em;">{{ $hotel->name }}</h1>
+<
+     <h1 style="margin-left:1em;  margin-top:5em; ">{{ $hotel->name }}</h1>
         <h3 style="margin-left:2em;">Location:{{ $hotel->location }}</h3>
-       
-       
-    <p style="margin-left:2em;">{{ $hotel->synopsis }}</p>
+        <h3 style="margin-left:2em;" >Price: Rp{{ $hotel->price }}</h3>
+      <p style="margin-left:2em; text-align:justify;">{{ $hotel->synopsis }}</p>
     <a href="/edit/{{ ($hotel->id) }}"><button style="margin-left:2em;" class="button button1">Edit</button></a>
 <a href="/delete/{{ ($hotel->id) }}"><button class="button button2">Delete</button></a>
+<h3 style="margin-left:2em; color:white;" id="price" >{{ $hotel->price }}</h3>
 
-
-    </div>
-   
 
 
 </div>
 <div class="container2" style="margin-top:6rem">
 
-<div style="margin-left:65rem" class="box">
+<div style="margin-left:95rem; margin-top:9em;" class="box">
     <h1>BookNOW!</h1>
-    <input type="text">
-    <button type="submit"></button>
+    <label for="">Price/night</label>
+    <input type="text" id="input" placeholder="night">
+    <button style="color:black" onclick="myFunction()"  type="submit">Book1</button>
+
+    <p style="font-weight: bold;" id="demo"></p>
+
+
+    
+   
 </div>
 </div>
+
+<script>
+  function myFunction() {
+    var night = document.getElementById('input').value;
+  
+  var price = document.getElementById('price').textContent;
+  var total =price*night;
+  document.getElementById("demo").innerHTML = "Total Price:"+"Rp"+total;
+  }
+</script>
 
